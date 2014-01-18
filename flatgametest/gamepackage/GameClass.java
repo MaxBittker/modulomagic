@@ -14,9 +14,7 @@ import javax.swing.JFrame;
 
 public class GameClass extends Canvas implements Runnable{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 
@@ -34,6 +32,8 @@ public class GameClass extends Canvas implements Runnable{
 	
 	private BufferedImage image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	
+	public int[][] bitMap = new int[100][100];
 	
 	public GameClass(){
 		setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
@@ -105,10 +105,19 @@ public class GameClass extends Canvas implements Runnable{
 	public void tick(){
 		tickCount++;
 		
-		for(int i =0;i < pixels.length; i++){
-			//pixels[i] = i + tickCount;
-			pixels[i] = i % tickCount * tickCount;}
+		//pixels[i] = i + tickCount;
+		 //pixels[i] = i % tickCount * tickCount;
 		
+		 for(int x =0;x < 100; x++)
+		 		{
+			 for(int y =0;y < 100; y++)
+			 		{
+					pixels[((x*100)+y)] = bitMap[x][y];
+					bitMap[x][y]=(x*y %tickCount * tickCount *2);
+			 			}
+			 
+		}
+			 
 		}
 	
 
