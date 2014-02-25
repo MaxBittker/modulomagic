@@ -19,7 +19,7 @@ public class GameClass extends Canvas implements Runnable{
 
 
 	public static final int WIDTH = 100;
-	public static final int HEIGHT = 100;
+	public static final int HEIGHT = WIDTH;
 	public static final int SCALE = 7;
 	public static final String NAME = "JAR";
 
@@ -33,7 +33,7 @@ public class GameClass extends Canvas implements Runnable{
 	private BufferedImage image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	
-	public int[][] bitMap = new int[100][100];
+	public int[][] bitMap = new int[WIDTH][HEIGHT];
 	
 	public GameClass(){
 		setMinimumSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
@@ -108,11 +108,11 @@ public class GameClass extends Canvas implements Runnable{
 		//pixels[i] = i + tickCount;
 		 //pixels[i] = i % tickCount * tickCount;
 		
-		 for(int x =0;x < 100; x++)
+		 for(int x =0;x < WIDTH; x++)
 		 		{
-			 for(int y =0;y < 100; y++)
+			 for(int y =0;y < HEIGHT; y++)
 			 		{
-					pixels[((x*100)+y)] = bitMap[x][y];
+					pixels[((x*WIDTH)+y)] = bitMap[x][y];
 					bitMap[x][y]=(x*y %tickCount * tickCount *2);
 			 			}
 			 
