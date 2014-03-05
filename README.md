@@ -1,16 +1,18 @@
 modulomagic
 ===========
-interesting/mesmerizing bitmap patterns
+Interesting/mesmerizing bitmap patterns
 
-grab the compiled jar here for pretty colors
+A 100x100 grid of RGB pixels, running at 30fps. magic comes from this line:
 
-https://dl.dropboxusercontent.com/u/18423113/bugs2.jar
+`bitMap[x][y]=(x*y %tickCount * tickCount *2);`
 
-a 100x100 grid of RGB pixels, running at 30fps. magic comes from this line:
+Try changing that around and have fun with it, if you make any nice ones I'd be interested in seeing them!
 
-bitMap[x][y]=(x*y %tickCount * tickCount *2);
+Thanks to Ryan van Zeben for his JFrame tutorial
 
-so try changing that around and have fun with it, if you make any nice ones i'd be interested in seeing them!
 
-thanks to Ryan van Zeben for his JFrame tutorial
+Compiling
+---------
+Run `javac GameClass.java` to generate the class file, then `java GameClass` to run the game
 
+For a precompiled jar file, see https://dl.dropboxusercontent.com/u/18423113/bugs2.jar
