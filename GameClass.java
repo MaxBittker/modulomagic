@@ -1,5 +1,3 @@
-package gamepackage;
-
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
